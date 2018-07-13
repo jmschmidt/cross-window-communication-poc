@@ -1,0 +1,1 @@
+# Folder for images, videos, or other visual assets

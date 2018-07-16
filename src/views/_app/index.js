@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import logo from '../../assets/images/logo.svg';
 import './app.css';
 
 import Home from '../home';
 import About from '../about';
 import Examples from '../examples';
+import NoMatch from '../404';
 
 
 const App = () => (
@@ -20,11 +21,15 @@ const App = () => (
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/examples">Examples</Link></li>
+          <li><Link to="/this-is-not-a-valid-url">404 Page</Link></li>
         </ul>
 
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/examples" component={Examples} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/examples" component={Examples} />
+          <Route component={NoMatch} />
+        </Switch>
       </div>
     </Router>
   </div>

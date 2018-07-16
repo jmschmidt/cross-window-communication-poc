@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import logo from './logo.svg';
-import './App.css';
+import logo from '../../assets/images/logo.svg';
+import './app.css';
 
-import Home from './views/home';
-import About from './views/about';
+import Home from '../home';
+import About from '../about';
 
 
 const App = () => (

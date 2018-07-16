@@ -5,6 +5,7 @@ import './app.css';
 
 import Home from '../home';
 import About from '../about';
+import Examples from '../examples';
 
 
 const App = () => (
@@ -18,10 +19,12 @@ const App = () => (
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
+          <li><Link to="/examples">Examples</Link></li>
         </ul>
 
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
+        <Route path="/examples" component={Examples} />
       </div>
     </Router>
   </div>

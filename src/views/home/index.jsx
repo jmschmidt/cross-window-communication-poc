@@ -1,9 +1,17 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
-const Home = () => (
-  <div className="Home">
-    <h2>Home</h2>
-  </div>
-);
+const Home = (props) => {
+  const { t, tReady } = props;
 
-export default Home;
+  return (
+    <div className="Home">
+      <h2>Home</h2>
+      <p>
+        {t('greeting')}
+      </p>
+    </div>
+  )
+};
+
+export default translate()(Home);

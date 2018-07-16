@@ -1,0 +1,10 @@
+.primary-nav {
+  list-style: none;
+  display: flex;
+  align-item: center;
+  justify-content: center;
+
+  &__item {
+    margin: 0 5px;
+  }
+}

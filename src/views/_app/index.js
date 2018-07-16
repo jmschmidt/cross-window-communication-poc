@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './app.css';
 
 import Header from '../../components/Header';
+import PrimaryNav from '../../components/PrimaryNav';
+import Footer from '../../components/Footer';
 
 import Home from '../home';
 import About from '../about';
@@ -15,13 +17,7 @@ const App = () => (
     <Header />
     <Router>
       <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/examples">Examples</Link></li>
-          <li><Link to="/this-is-not-a-valid-url">404 Page</Link></li>
-        </ul>
-
+        <PrimaryNav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
@@ -30,6 +26,7 @@ const App = () => (
         </Switch>
       </div>
     </Router>
+    <Footer />
   </div>
 );
 

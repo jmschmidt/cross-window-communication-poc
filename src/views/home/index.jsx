@@ -2,7 +2,7 @@ import React from 'react';
 import { translate } from 'react-i18next';
 
 const Home = (props) => {
-  const { t, tReady } = props;
+  const { t } = props;
 
   return (
     <div className="Home">

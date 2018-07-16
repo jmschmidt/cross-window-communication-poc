@@ -14,14 +14,14 @@ const instance = i18n
     fallbackLng: 'en-US',
     // Only try to load the current language
     load: 'currentOnly',
-    // react-i18next
+    // react-i18next settings
     react: {
       wait: true,
       bindI18n: 'languageChanged loaded',
       bindStore: false,
       nsMode: 'default'
     },
-    // i18next-xhr-backend
+    // i18next-xhr-backend settings
     backend: {
       loadPath: 'locales/{{lng}}.json',
     },

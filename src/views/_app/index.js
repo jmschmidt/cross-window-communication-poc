@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './app.css';
 
-import Header from '../../components/Header';
-import PrimaryNav from '../../components/PrimaryNav';
-import Footer from '../../components/Footer';
+import Header from 'components/Header';
+import PrimaryNav from 'components/PrimaryNav';
+import Footer from 'components/Footer';
 
-import Home from '../home';
-import About from '../about';
-import Examples from '../examples';
-import NoMatch from '../404';
+import Home from 'views/home';
+import About from 'views/about';
+import Examples from 'views/examples';
+import NoMatch from 'views/404';
 
 
 const App = () => (

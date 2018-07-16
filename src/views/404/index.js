@@ -1,9 +1,10 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
-const NoMatch = ({ location }) => (
+const NoMatch = ({ t, location }) => (
   <div className="NoMatch">
-    <h2>404: No Match for <code>{ location.pathname }</code></h2>
+    <h2 dangerouslySetInnerHTML={ {__html: t('404.title', { path: location.pathname })} }></h2>
   </div>
 );
 
-export default NoMatch;
+export default translate()(NoMatch);

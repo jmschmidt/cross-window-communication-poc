@@ -1,3 +1,30 @@
 {
-  "greeting": "Hello World"
+  "greeting": "Hello World",
+  "global": {
+    "changeLanguage": "Change Language"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "examples": "Examples",
+    "404": "404 Page"
+  },
+  "header": {
+    "title": "Welcome to React"
+  },
+  "footer": {
+    "projectName": "DHAP React Boilerplate"
+  },
+  "home": {
+    "title": "Home"
+  },
+  "about": {
+    "title": "About"
+  },
+  "examples": {
+    "title": "Examples Page"
+  },
+  "404": {
+    "title": "404: No Match for <code>{{path}}</code>"
+  }
 }

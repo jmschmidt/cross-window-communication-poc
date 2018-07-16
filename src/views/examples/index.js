@@ -1,9 +1,10 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
-const ExamplePage = () => (
+const ExamplePage = ({ t }) => (
   <div className="Examples">
-    <h2>Examples Page</h2>
+    <h2>{t('examples.title')}</h2>
   </div>
 );
 
-export default ExamplePage;
+export default translate()(ExamplePage);

@@ -1,3 +1,30 @@
 {
-  "greeting": "こんにちは、世界"
+  "greeting": "こんにちは、世界",
+  "global": {
+    "changeLanguage": "言語変更"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "会社情報",
+    "examples": "事例紹介",
+    "404": "404 ページ"
+  },
+  "header": {
+    "title": "Reactへようこそ"
+  },
+  "footer": {
+    "projectName": "DHAP React Boilerplate"
+  },
+  "home": {
+    "title": "ホーム"
+  },
+  "about": {
+    "title": "会社情報"
+  },
+  "examples": {
+    "title": "事例紹介"
+  },
+  "404": {
+    "title": "404: <code>{{path}}</code>のパースが見つかりませんでした。"
+  }
 }

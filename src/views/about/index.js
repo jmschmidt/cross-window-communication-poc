@@ -1,9 +1,10 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
-const About = () => (
+const About = ({ t }) => (
   <div className="About">
-    <h2>About</h2>
+    <h2>{t('about.title')}</h2>
   </div>
 );
 
-export default About;
+export default translate()(About);

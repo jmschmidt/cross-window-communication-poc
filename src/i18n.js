@@ -7,6 +7,9 @@ const instance = i18n
   .use(XHR)
   .init({
     debug: DEBUG,
+    ns: 'global',
+    defaultNS: 'global',
+    fallbackNS: 'global',
     // Normalize language codes to lowercase
     lowerCaseLng: true,
     // List of supported languages
@@ -27,7 +30,7 @@ const instance = i18n
     },
     // i18next-xhr-backend settings
     backend: {
-      loadPath: '{{lng}}',
+      loadPath: '{{ns}}/{{lng}}',
       parse: (data) => data,
       ajax: loadLocales,
     },

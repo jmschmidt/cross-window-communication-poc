@@ -15,15 +15,6 @@
   "footer": {
     "projectName": "DHAP React Boilerplate"
   },
-  "home": {
-    "title": "Home"
-  },
-  "about": {
-    "title": "About"
-  },
-  "examples": {
-    "title": "Examples Page"
-  },
   "404": {
     "title": "404: No Match for <code>{{path}}</code>"
   }

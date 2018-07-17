@@ -1,0 +1,6 @@
+{
+  "files.exclude": {
+    // Ignore CSS files since they're generated from SCSS files
+    "src/**/*.css": true
+  }
+}

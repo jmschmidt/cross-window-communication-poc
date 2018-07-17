@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { translate } from 'react-i18next';
 
-class Home extends Component {
+import LocalizedComponent from 'components/localizedComponent';
+
+class Home extends LocalizedComponent {
+  static namespace = 'home';
+
   render() {
     const { t } = this.props;
     return (
@@ -15,4 +19,4 @@ class Home extends Component {
   }
 }
 
-export default translate('home')(Home);
+export default translate(Home.namespace)(Home);

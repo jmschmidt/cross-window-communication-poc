@@ -1,10 +1,20 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 
-const ExamplePage = ({ t }) => (
-  <div className="Examples">
-    <h2>{t('examples:title')}</h2>
-  </div>
-);
+import LocalizedComponent from 'components/localizedComponent';
 
-export default translate('examples')(ExamplePage);
+class ExamplePage extends LocalizedComponent {
+  static namespace = 'examples';
+
+  render() {
+    const { t } = this.props;
+    return (
+      <div className="Examples">
+        <h2>{t('examples:title')}</h2>
+      </div>
+    );
+  }
+}
+
+
+export default translate(ExamplePage.namespace)(ExamplePage);

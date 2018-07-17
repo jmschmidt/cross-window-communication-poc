@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { translate } from 'react-i18next';
 import './app.css';
 
-import Header from 'components/Header';
-import PrimaryNav from 'components/PrimaryNav';
-import Footer from 'components/Footer';
+import Header from 'components/header';
+import PrimaryNav from 'components/primaryNav';
+import Footer from 'components/footer';
 
 import Home from 'views/home';
 import About from 'views/about';

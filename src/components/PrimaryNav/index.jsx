@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { translate } from 'react-i18next';
-import './PrimaryNav.css';
+import './primaryNav.css';
 
 class PrimaryNav extends Component {
   render() {

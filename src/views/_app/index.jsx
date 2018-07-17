@@ -17,7 +17,7 @@ import i18n from 'i18n.js';
 
 class App extends Component {
   changeLanguage() {
-    const nextLang = i18n.language === 'en-US' ? 'ja-JP' : 'en-US';
+    const nextLang = i18n.language === 'en-us' ? 'ja-jp' : 'en-us';
     i18n.changeLanguage(nextLang)
   }
 

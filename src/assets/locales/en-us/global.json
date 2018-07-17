@@ -7,6 +7,8 @@
     "home": "Home",
     "about": "About",
     "examples": "Examples",
+    "login": "Login",
+    "private": "Private",
     "404": "404 Page"
   },
   "header": {

@@ -12,6 +12,8 @@ class PrimaryNav extends Component {
         <li className="primary-nav__item"><NavLink activeClassName="current" exact to="/">{t('nav.home')}</NavLink></li>
         <li className="primary-nav__item"><NavLink activeClassName="current" to="/about">{t('nav.about')}</NavLink></li>
         <li className="primary-nav__item"><NavLink activeClassName="current" to="/examples">{t('nav.examples')}</NavLink></li>
+        <li className="primary-nav__item"><NavLink activeClassName="current" to="/login">{t('nav.login')}</NavLink></li>
+        <li className="primary-nav__item"><NavLink activeClassName="current" to="/private">{t('nav.private')}</NavLink></li>
         <li className="primary-nav__item"><NavLink activeClassName="current" to="/this-is-not-a-valid-url">{t('nav.404')}</NavLink></li>
       </ul>
     );

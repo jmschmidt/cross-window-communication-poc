@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AuthenticatedRoute from 'utils/authenticatedRoute';
 import { translate } from 'react-i18next';
 import './app.css';
 
@@ -10,6 +11,8 @@ import Footer from 'components/footer';
 import Home from 'views/home';
 import About from 'views/about';
 import Examples from 'views/examples';
+import Login from 'views/login';
+import Private from 'views/private';
 import NoMatch from 'views/404';
 
 import i18n from 'i18n.js';
@@ -37,6 +40,8 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/examples" component={Examples} />
+              <Route path="/login" component={Login} />
+              <AuthenticatedRoute path="/private" component={Private} />
               <Route component={NoMatch} />
             </Switch>
           </React.Fragment>

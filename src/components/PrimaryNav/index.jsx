@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { translate } from 'react-i18next';
 import './PrimaryNav.css';
 
@@ -9,10 +9,10 @@ class PrimaryNav extends Component {
 
     return (
       <ul className="primary-nav">
-        <li className="primary-nav__item"><Link to="/">{t('nav.home')}</Link></li>
-        <li className="primary-nav__item"><Link to="/about">{t('nav.about')}</Link></li>
-        <li className="primary-nav__item"><Link to="/examples">{t('nav.examples')}</Link></li>
-        <li className="primary-nav__item"><Link to="/this-is-not-a-valid-url">{t('nav.404')}</Link></li>
+        <li className="primary-nav__item"><NavLink activeClassName="current" exact to="/">{t('nav.home')}</NavLink></li>
+        <li className="primary-nav__item"><NavLink activeClassName="current" to="/about">{t('nav.about')}</NavLink></li>
+        <li className="primary-nav__item"><NavLink activeClassName="current" to="/examples">{t('nav.examples')}</NavLink></li>
+        <li className="primary-nav__item"><NavLink activeClassName="current" to="/this-is-not-a-valid-url">{t('nav.404')}</NavLink></li>
       </ul>
     );
   }

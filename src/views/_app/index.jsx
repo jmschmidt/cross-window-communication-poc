@@ -26,23 +26,23 @@ class App extends Component {
 
     return (
       <div className="App">
-      <Header />
-      <div>
-        <button onClick={this.changeLanguage}>{t('global.changeLanguage')} ({i18n.language})</button>
-      </div>
-      <Router>
+        <Header />
         <div>
-          <PrimaryNav />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/examples" component={Examples} />
-            <Route component={NoMatch} />
-          </Switch>
+          <button onClick={this.changeLanguage}>{t('global.changeLanguage')} ({i18n.language})</button>
         </div>
-      </Router>
-      <Footer />
-    </div>
+        <Router>
+          <React.Fragment>
+            <PrimaryNav />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/examples" component={Examples} />
+              <Route component={NoMatch} />
+            </Switch>
+          </React.Fragment>
+        </Router>
+        <Footer />
+      </div>
     );
   }
 }

@@ -30,7 +30,7 @@ const instance = i18n
     },
     // i18next-xhr-backend settings
     backend: {
-      loadPath: '{{ns}}/{{lng}}',
+      loadPath: '{{lng}}/{{ns}}',
       parse: (data) => data,
       ajax: loadLocales,
     },

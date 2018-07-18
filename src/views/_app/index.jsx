@@ -18,7 +18,7 @@ import NoMatch from 'views/404';
 import i18n from 'i18n.js';
 
 
-class App extends Component {
+export class App extends Component {
   changeLanguage() {
     const nextLang = i18n.language === 'en-us' ? 'ja-jp' : 'en-us';
     i18n.changeLanguage(nextLang)

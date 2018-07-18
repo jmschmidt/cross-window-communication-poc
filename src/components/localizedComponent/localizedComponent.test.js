@@ -6,6 +6,13 @@ import i18n from 'i18n.js';
 // Will override the above import with the mock file in src/__mocks__/
 jest.mock('i18n.js');
 
+/**
+ * Jest v20 doesn't support console.debug(). This can be removed once CRA is updated to the next
+ * version after 1.1.4. According to the `next` branch on Github, this will upgrade Jest to v22,
+ * which should support console.debug
+ */
+console.debug = jest.fn();
+
 class FooComponentNamespace extends LocalizedComponent {
   static namespace = 'foo';
   render() {

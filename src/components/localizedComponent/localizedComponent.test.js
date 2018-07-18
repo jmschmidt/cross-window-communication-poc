@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { render } from 'react-testing-library';
 
 import LocalizedComponent from '.';
 import i18n from 'i18n.js';
+// Will override the above import with the mock file in src/__mocks__/
 jest.mock('i18n.js');
 
 class FooComponentNamespace extends LocalizedComponent {

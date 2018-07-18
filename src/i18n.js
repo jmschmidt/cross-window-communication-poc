@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import XHR from 'i18next-xhr-backend';
 
 import { DEBUG } from './env';
+import logger from 'utils/logger';
 
 const instance = i18n
   .use(XHR)
@@ -48,7 +49,7 @@ function loadLocales(url, options, callback, data) {
   import(`./assets/locales/${url}.json`).then((locale) => {
     callback(locale, {status: '200'});
   }).catch((err) => {
-    console.error('Error importing locale file:', err);
+    logger.error('Error importing locale file:', err);
     callback(null, {status: '404'});
   });
 }

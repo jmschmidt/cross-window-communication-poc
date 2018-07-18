@@ -1,6 +1,7 @@
 import { Component } from 'react';
 
 import i18n from 'i18n.js';
+import logger from 'utils/logger';
 
 
 /**
@@ -28,7 +29,7 @@ import i18n from 'i18n.js';
 class LocalizedComponent extends Component {
   componentWillUnmount() {
     if (this.constructor.namespace) {
-      console.debug(`unloading namespace ${this.constructor.namespace} for language ${i18n.language}`);
+      logger.debug(`unloading namespace ${this.constructor.namespace} for language ${i18n.language}`);
       i18n.removeResourceBundle(i18n.language, this.constructor.namespace);
     }
   }

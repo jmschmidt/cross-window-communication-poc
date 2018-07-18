@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+
 import AuthService from 'utils/authService';
+import logger from 'utils/logger';
 
 class Login extends Component {
   state = {
@@ -8,9 +10,9 @@ class Login extends Component {
   };
 
   login = () => {
-    console.log('this.login!');
+    logger.log('this.login!');
     AuthService.authenticate(() => {
-      console.log('.authenticate cb');
+      logger.log('.authenticate cb');
       this.setState({ redirectToReferrer: true });
     });
   };
@@ -18,7 +20,7 @@ class Login extends Component {
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     const { redirectToReferrer } = this.state;
-    console.log('render: ', from, redirectToReferrer);
+    logger.log('render: ', from, redirectToReferrer);
 
     if (redirectToReferrer) {
       return ( <Redirect to={from} /> );

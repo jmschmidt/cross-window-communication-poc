@@ -9,3 +9,10 @@ import 'react-testing-library/cleanup-after-each';
 import 'jest-dom/extend-expect';
 
 configure({ adapter: new Adapter() });
+
+/**
+ * Jest v20 doesn't support console.debug(). This can be removed once CRA is updated to the next
+ * version after 1.1.4. According to the `next` branch on Github, this will upgrade Jest to v22,
+ * which should support console.debug
+ */
+console.debug = jest.fn();

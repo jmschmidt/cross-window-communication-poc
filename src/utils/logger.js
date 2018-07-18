@@ -13,6 +13,11 @@ class Logger {
     this.consoleOut = DEBUG;
   }
 
+  /**
+   * Output a logging message to the browser console
+   * @param {LEVELS} level - The logging output level
+   * @param {*} msg - The value to log
+   */
   _speak(level, msg) {
     if (this.consoleOut) {
       switch(level) {
@@ -35,18 +40,57 @@ class Logger {
       }
     }
 
-    this._remoteLogging(level, msg);
+    // Submit the message to a remote destination
+    this._yell(level, msg);
   }
 
-  _remoteLogging(level, msg) {
-    // A placeholder in case a project requires centralized logging
+  /**
+   * A place to set up logging to a remote server
+   * @param {LEVELS} level - The logging output level
+   * @param {*} msg - The value to log
+   */
+  _yell(level, msg) {
   }
 
-  debug(msg) { this._speak(LEVELS.DEBUG, msg); }
-  info(msg) { this._speak(LEVELS.INFO, msg); }
-  log(msg) { this._speak(LEVELS.LOG, msg); }
-  warn(msg) { this._speak(LEVELS.WARN, msg); }
-  error(msg) { this._speak(LEVELS.ERROR, msg); }
+  /**
+   * DEBUG message
+   * @param {*} msg - The value to log
+   */
+  debug(msg) {
+    this._speak(LEVELS.DEBUG, msg);
+  }
+
+  /**
+   * INFO message
+   * @param {*} msg - The value to log
+   */
+  info(msg) {
+    this._speak(LEVELS.INFO, msg);
+  }
+
+  /**
+   * LOG message
+   * @param {*} msg - The value to log
+   */
+  log(msg) {
+    this._speak(LEVELS.LOG, msg);
+  }
+
+  /**
+   * WARN message
+   * @param {*} msg - The value to log
+   */
+  warn(msg) {
+    this._speak(LEVELS.WARN, msg);
+  }
+
+  /**
+   * ERROR message
+   * @param {*} msg - The value to log
+   */
+  error(msg) {
+    this._speak(LEVELS.ERROR, msg);
+  }
 }
 
 const logger = new Logger();

@@ -40,12 +40,4 @@ describe('Logger', () => {
     logger.log('foo');
     expect(console.log).not.toHaveBeenCalled();
   });
-
-  it('PLACEHOLDER - should trigger remote logging (if configured)', () => {
-    logger._remoteLogging = jest.fn();
-    const msg = 'foo';
-    logger.log(msg);
-    expect(logger._remoteLogging).toHaveBeenCalled();
-    expect(logger._remoteLogging).toHaveBeenCalledWith(LEVELS.LOG, msg);
-  });
 });

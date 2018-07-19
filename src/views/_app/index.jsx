@@ -9,6 +9,7 @@ import './app.css';
 import Header from 'components/header';
 import PrimaryNav from 'components/primaryNav';
 import Footer from 'components/footer';
+import Loader from 'components/loader';
 
 import Home from 'views/home';
 import About from 'views/about';
@@ -35,6 +36,7 @@ export const App = inject('rootStore')(observer(class App extends Component {
         <Header />
         <div>
           <button onClick={this.toggleLanguage}>{t('global.changeLanguage')} ({rootStore.uiStore.currentLanguage})</button>
+          {rootStore.uiStore.isLoading && <Loader />}
         </div>
         <Router>
           <React.Fragment>

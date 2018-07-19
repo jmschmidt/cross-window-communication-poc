@@ -11,6 +11,7 @@ class UIStore {
     // for now use extendObservable() until we can use @observable's when defining class properties
     extendObservable(this, {
       currentLanguage: LANGS.EN_US,
+      isLoading: false,
     });
 
     /**

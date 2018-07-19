@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
 
 import logger from 'utils/logger';
+import observeRootStore from 'components/hoc/observeRootStore';
 
-const Login = inject('rootStore')(observer(class Login extends Component {
+export class Login extends Component {
   state = {
     redirectToReferrer: false
   };
@@ -34,6 +34,6 @@ const Login = inject('rootStore')(observer(class Login extends Component {
       </div>
     )
   }
-}));
+}
 
-export default Login;
+export default observeRootStore(Login);

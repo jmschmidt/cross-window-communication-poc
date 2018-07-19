@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 import logo from 'assets/images/logo.svg';
 import './header.css';
 
-const Header = ({ t }) => (
+export const Header = ({ t }) => (
   <header className="header">
     <img src={logo} className="header-logo" alt="logo" />
     <h1 className="header-title">{t('header.title')}</h1>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { translate } from 'react-i18next';
-import { observer, inject } from 'mobx-react';
+
+import observeRootStore from 'components/hoc/observeRootStore';
 
 import './primaryNav.css';
 
-const PrimaryNav = inject('rootStore')(observer(class PrimaryNav extends Component {
+export class PrimaryNav extends Component {
   render() {
     const { t, rootStore } = this.props;
 
@@ -21,6 +22,6 @@ const PrimaryNav = inject('rootStore')(observer(class PrimaryNav extends Compone
       </ul>
     );
   }
-}));
+}
 
-export default translate()(PrimaryNav);
+export default observeRootStore(translate()(PrimaryNav));

@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 
 import LocalizedComponent from 'components/localizedComponent';
 
-class ExamplePage extends LocalizedComponent {
+export class ExamplePage extends LocalizedComponent {
   static namespace = 'examples';
 
   render() {

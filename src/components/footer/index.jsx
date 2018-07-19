@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 
 import './footer.css';
 
-const Footer = ({ t }) => (
+export const Footer = ({ t }) => (
   <div className="footer">&copy; 2018 | {t('footer.projectName')}</div>
 );
 

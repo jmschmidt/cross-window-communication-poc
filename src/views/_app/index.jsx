@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthenticatedRoute from 'utils/authenticatedRoute';
 import { translate } from 'react-i18next';
-import { inject, observer } from 'mobx-react';
 
 import './app.css';
 
@@ -10,6 +9,7 @@ import Header from 'components/header';
 import PrimaryNav from 'components/primaryNav';
 import Footer from 'components/footer';
 import Loader from 'components/loader';
+import observeRootStore from 'components/hoc/observeRootStore';
 
 import Home from 'views/home';
 import About from 'views/about';
@@ -21,7 +21,7 @@ import NoMatch from 'views/404';
 import { LANGS } from 'i18n.js';
 
 
-export const App = inject('rootStore')(observer(class App extends Component {
+export class App extends Component {
   toggleLanguage = () => {
     const currLang = this.props.rootStore.uiStore.currentLanguage;
     const nextLang = currLang === LANGS.EN_US ? LANGS.JA_JP : LANGS.EN_US;
@@ -55,6 +55,6 @@ export const App = inject('rootStore')(observer(class App extends Component {
       </div>
     );
   }
-}));
+}
 
-export default translate()(App);
+export default observeRootStore(translate()(App));

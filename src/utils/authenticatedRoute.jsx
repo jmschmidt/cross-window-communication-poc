@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
 
-const AuthenticatedRoute = inject('rootStore')(observer(({ component: Component, rootStore, ...rest }) => (
+import observeRootStore from 'components/hoc/observeRootStore';
+
+const AuthenticatedRoute = observeRootStore(({ component: Component, rootStore, ...rest }) => (
   <Route
     {...rest}
     render={props => rootStore.appStore.user.loggedIn ?
@@ -16,6 +17,6 @@ const AuthenticatedRoute = inject('rootStore')(observer(({ component: Component,
       )
     }
   />
-)));
+));
 
 export default AuthenticatedRoute;

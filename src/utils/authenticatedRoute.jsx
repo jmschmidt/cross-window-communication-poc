@@ -1,13 +1,12 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { inject, observer } from 'mobx-react';
 
-import AuthService from 'utils/authService';
-
-const AuthenticatedRoute = ({ component: Component, ...rest }) => (
+const AuthenticatedRoute = inject('rootStore')(observer(({ component: Component, rootStore, ...rest }) => (
   <Route
     {...rest}
-    render={props => AuthService.isAuthenticated ?
-      ( <Component {...props} /> ) :
+    render={props => rootStore.appStore.user.loggedIn ?
+      ( <Component {...props} rootStore={rootStore} /> ) :
       ( <Redirect
           to={{
             pathname: '/login',
@@ -17,6 +16,6 @@ const AuthenticatedRoute = ({ component: Component, ...rest }) => (
       )
     }
   />
-);
+)));
 
 export default AuthenticatedRoute;

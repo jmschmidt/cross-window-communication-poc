@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { inject, observer } from 'mobx-react';
 
-import AuthService from 'utils/authService';
 import logger from 'utils/logger';
 
-class Login extends Component {
+const Login = inject('rootStore')(observer(class Login extends Component {
   state = {
     redirectToReferrer: false
   };
 
   login = () => {
     logger.log('this.login!');
-    AuthService.authenticate(() => {
+    this.props.rootStore.appStore.authenticate(() => {
       logger.log('.authenticate cb');
       this.setState({ redirectToReferrer: true });
     });
@@ -34,6 +34,6 @@ class Login extends Component {
       </div>
     )
   }
-}
+}));
 
 export default Login;

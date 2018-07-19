@@ -11,6 +11,21 @@ class AppStore {
       username: '',
     });
   }
+
+  /**
+   * Actions that modify state
+   */
+  authenticate(cb) {
+    this.user.loggedIn = true;
+    this.user.username = 'DHAPUser';
+    setTimeout(cb, 250); // fake async
+  }
+
+  logOut(cb) {
+    this.user.loggedIn = false;
+    this.user.username = '';
+    setTimeout(cb, 250);
+  }
 }
 
 export default AppStore;

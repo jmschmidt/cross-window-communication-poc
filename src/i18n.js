@@ -4,6 +4,12 @@ import XHR from 'i18next-xhr-backend';
 import { DEBUG } from './env';
 import logger from 'utils/logger';
 
+export const LANGS = {
+  EN_US: 'en-us',
+  JA_JP: 'ja-jp',
+};
+export const WHITELIST_LANGS = [LANGS.EN_US, LANGS.JA_JP];
+
 const instance = i18n
   .use(XHR)
   .init({
@@ -14,7 +20,7 @@ const instance = i18n
     // Normalize language codes to lowercase
     lowerCaseLng: true,
     // List of supported languages
-    whitelist: ['en-us', 'ja-jp'],
+    whitelist: WHITELIST_LANGS,
     // Current language
     lng: 'en-us',
     // A fallback language to attempt to load translations from

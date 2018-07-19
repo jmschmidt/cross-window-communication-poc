@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthenticatedRoute from 'utils/authenticatedRoute';
-import { translate } from 'react-i18next';
 
 import './app.css';
 
@@ -9,6 +8,7 @@ import Header from 'components/header';
 import PrimaryNav from 'components/primaryNav';
 import Footer from 'components/footer';
 import Loader from 'components/loader';
+import LocalizedComponent from 'components/localizedComponent';
 import observeRootStore from 'components/hoc/observeRootStore';
 
 import Home from 'views/home';
@@ -21,7 +21,7 @@ import NoMatch from 'views/404';
 import { LANGS } from 'i18n.js';
 
 
-export class App extends Component {
+export class App extends LocalizedComponent {
   toggleLanguage = () => {
     const currLang = this.props.rootStore.uiStore.currentLanguage;
     const nextLang = currLang === LANGS.EN_US ? LANGS.JA_JP : LANGS.EN_US;
@@ -57,4 +57,4 @@ export class App extends Component {
   }
 }
 
-export default observeRootStore(translate()(App));
+export default observeRootStore(App);

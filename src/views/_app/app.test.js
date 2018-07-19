@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { render } from 'react-testing-library';
 import { App } from '.';
+jest.mock('components/hoc/observeRootStore');
 
 const rootStoreMock = {
   uiStore: {},

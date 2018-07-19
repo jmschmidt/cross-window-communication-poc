@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthenticatedRoute from 'utils/authenticatedRoute';
+import { translate } from 'react-i18next';
 
 import './app.css';
 
@@ -57,4 +58,4 @@ export class App extends LocalizedComponent {
   }
 }
 
-export default observeRootStore(App);
+export default observeRootStore(translate()(App));

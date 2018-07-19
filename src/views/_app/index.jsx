@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthenticatedRoute from 'utils/authenticatedRoute';
 import { translate } from 'react-i18next';
+import { inject, observer } from 'mobx-react';
+
 import './app.css';
 
 import Header from 'components/header';
@@ -15,23 +17,24 @@ import Login from 'views/login';
 import Private from 'views/private';
 import NoMatch from 'views/404';
 
-import i18n from 'i18n.js';
+import { LANGS } from 'i18n.js';
 
 
-export class App extends Component {
-  changeLanguage() {
-    const nextLang = i18n.language === 'en-us' ? 'ja-jp' : 'en-us';
-    i18n.changeLanguage(nextLang)
+export const App = inject('rootStore')(observer(class App extends Component {
+  toggleLanguage = () => {
+    const currLang = this.props.rootStore.uiStore.currentLanguage;
+    const nextLang = currLang === LANGS.EN_US ? LANGS.JA_JP : LANGS.EN_US;
+    this.props.rootStore.uiStore.currentLanguage = nextLang;
   }
 
   render() {
-    const { t } = this.props;
+    const { t, rootStore } = this.props;
 
     return (
       <div className="App">
         <Header />
         <div>
-          <button onClick={this.changeLanguage}>{t('global.changeLanguage')} ({i18n.language})</button>
+          <button onClick={this.toggleLanguage}>{t('global.changeLanguage')} ({rootStore.uiStore.currentLanguage})</button>
         </div>
         <Router>
           <React.Fragment>
@@ -50,6 +53,6 @@ export class App extends Component {
       </div>
     );
   }
-}
+}));
 
 export default translate()(App);

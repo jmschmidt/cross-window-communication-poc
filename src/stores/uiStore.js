@@ -1,6 +1,6 @@
 import { intercept, extendObservable, reaction } from 'mobx';
 
-import i18n, { WHITELIST_LANGS } from 'i18n.js';
+import i18n, { LANGS, WHITELIST_LANGS } from 'i18n.js';
 
 
 class UIStore {
@@ -10,7 +10,7 @@ class UIStore {
     // We can't yet use decorators in CRA projects without ejecting. We're trying to avoid that so
     // for now use extendObservable() until we can use @observable's when defining class properties
     extendObservable(this, {
-      currentLanguage: 'en-us',
+      currentLanguage: LANGS.EN_US,
     });
 
     /**

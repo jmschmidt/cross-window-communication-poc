@@ -22,7 +22,11 @@ class PopupLauncher extends React.Component {
   render() {
     if (this.state.isPoppedOut) {
       return (
-        <NewWindow url='/secondary' title='Secondary Window' onUnload={this.popupClosed} />
+        <NewWindow 
+          url='/secondary' 
+          title='Secondary Window'
+          onUnload={this.popupClosed}
+        />
       )
     } else {
       return (

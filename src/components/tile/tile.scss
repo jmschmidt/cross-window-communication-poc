@@ -1,0 +1,9 @@
+.tile {
+  background: #333;
+  height: 48vh;
+  cursor: pointer;
+
+  &.active {
+    background: red;
+  }
+}

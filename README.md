@@ -10,3 +10,8 @@ Application launches a second window that is controlled by the parent window. Cl
 2. If using NVM execute `nvm use stable`
 3. Install dependencies: In your terminal, execute `npm install`
 4. Execute `npm start` to start your development server.
+
+## Launch Chrome in Kiosk Mode with url (mac OS)
+```
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk --app=http://localhost:3000
+```
